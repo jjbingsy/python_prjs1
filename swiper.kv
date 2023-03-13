@@ -1,0 +1,43 @@
+myscreen:
+
+<MySwiper>
+    orientation: "vertical"
+    FitImage:
+        #source: "root.address"
+        radius: [20,20]
+
+<myscreen>:
+    id: myss
+    height: dp(1000)
+    width: dp(700)
+    
+    MDTopAppBar:
+        id: toolbar
+        right_action_items: [["dots-vertical", lambda x: app.callback(x)  ] ]
+        title: "Our Swipper App"
+        elevation: 10
+        pos_hint: {"top": 1}
+
+    MDSwiper:
+        id: myswipe
+        size_hint_y: None
+        height: root.height - toolbar.height - dp(40)
+        on_swipe: root.on_swipe()
+        y: root.height - self.height - dp(20)- toolbar.height
+
+     
+
+    BoxLayout:
+        orientation:'horizontal'
+        MDRaisedButton:
+            id: Mer
+            text:'Watch'
+            on_release: root.on_clear()
+        MDRaisedButton:
+            id: Mer2
+            text:'text'
+            on_release: root.on_text()
+        MDRaisedButton:
+            id: Mer55
+            text:'destroy'
+            on_release: root.on_destroy()

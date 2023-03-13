@@ -1,0 +1,14 @@
+BoxLayout:
+    orientation: "vertical"
+    
+    MDTopAppBar:
+        right_action_items: [["dots-vertical", lambda x: print(x)], ["dots-vertical", lambda x: app.callback(x) ] ]
+        title: "MDDropDown Test A"
+        md_bg_color: app.theme_cls.primary_color
+
+    BoxLayout:
+        Widget:
+        MDRaisedButton:
+            text: 'Menu'
+            post_hint: {"center_y": .5}
+        Widget:

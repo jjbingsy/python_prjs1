@@ -1,0 +1,16 @@
+mess:
+
+<mess>:
+
+    MDTopAppBar:
+        id: toolbar
+        title: "Our Swipper App"
+        elevation: 10
+        pos_hint: {"top": 1}
+
+    <MySwiper>:
+        id: myswipe
+        size_hint_y: None
+        height: root.height - toolbar.height - dp(40)
+        on_swipe: root.on_swipe()
+        y: root.height - self.height - dp(20)- toolbar.height
